@@ -33,7 +33,7 @@ export function Header() {
               <GraduationCap className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Qurrotaainy</h1>
+              <h1 className="sm:text-xl font-bold text-foreground">Yayasan Qurrotaainy</h1>
               <p className="text-xs text-muted-foreground">SIT Qurrotaa'yun Sukabumi</p>
             </div>
           </div>
