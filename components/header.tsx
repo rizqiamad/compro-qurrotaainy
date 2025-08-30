@@ -13,7 +13,6 @@ export function Header() {
     { name: "About", href: "#about" },
     { name: "Schools", href: "#schools" },
     { name: "Programs", href: "#programs", hasDropdown: true },
-    { name: "Impact", href: "#impact" },
     { name: "News", href: "#news" },
     { name: "Contact", href: "#contact" },
   ]
@@ -34,13 +33,13 @@ export function Header() {
               <GraduationCap className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">EduFoundation</h1>
-              <p className="text-xs text-muted-foreground">Empowering Communities</p>
+              <h1 className="text-xl font-bold text-foreground">Qurrotaainy</h1>
+              <p className="text-xs text-muted-foreground">SIT Qurrotaa'yun Sukabumi</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden tablet:flex space-x-8">
             {navigation.map((item) => (
               <div key={item.name} className="relative">
                 {item.hasDropdown ? (
@@ -49,12 +48,12 @@ export function Header() {
                     onMouseEnter={() => setIsProgramsOpen(true)}
                     onMouseLeave={() => setIsProgramsOpen(false)}
                   >
-                    <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                    <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium hover:cursor-pointer">
                       <span>{item.name}</span>
                       <ChevronDown className="h-4 w-4" />
                     </button>
                     {isProgramsOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
+                      <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
                         {programsSubNav.map((subItem) => (
                           <Link
                             key={subItem.name}
@@ -80,13 +79,13 @@ export function Header() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Get Involved</Button>
+          <div className="hidden tablet:block">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground hover:cursor-pointer">Get Involved</Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className="tablet:hidden">
+            <Button className="hover:cursor-pointer" variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -94,7 +93,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="tablet:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <div key={item.name}>

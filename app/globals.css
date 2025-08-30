@@ -71,6 +71,10 @@
   --sidebar-ring: oklch(0.75 0.18 110); /* Light green sidebar focus ring */
 }
 
+@theme {
+  --breakpoint-tablet: 60rem;
+}
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

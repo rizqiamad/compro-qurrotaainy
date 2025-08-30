@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/hero-section"
 import { MissionSection } from "@/components/mission-section"
 import { SchoolsSection } from "@/components/schools-section"
 import { ProgramsSection } from "@/components/programs-section"
-import { ImpactSection } from "@/components/impact-section"
 import { NewsSection } from "@/components/news-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
@@ -17,7 +16,6 @@ export default function HomePage() {
         <MissionSection />
         <SchoolsSection />
         <ProgramsSection />
-        <ImpactSection />
         <NewsSection />
         <ContactSection />
       </main>

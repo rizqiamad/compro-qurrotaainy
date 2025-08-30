@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Educational Foundation - Empowering Communities Through Learning",
   description:
     "A comprehensive educational foundation managing multiple schools and programs to foster community growth and academic excellence.",
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth`}>
       <body>{children}</body>
     </html>
   )

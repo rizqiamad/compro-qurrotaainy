@@ -48,8 +48,8 @@ export function Footer() {
                 <GraduationCap className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground">EduFoundation</h3>
-                <p className="text-sm text-muted-foreground">Empowering Communities</p>
+                <h3 className="text-xl font-bold text-foreground">Qurrotaainy</h3>
+                <p className="text-sm text-muted-foreground">SIT Qurrotaa'yun Sukabumi</p>
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6">
