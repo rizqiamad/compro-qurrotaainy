@@ -11,16 +11,15 @@ export function Header() {
 
   const navigation = [
     { name: "About", href: "#about" },
-    { name: "Schools", href: "#schools" },
-    { name: "Programs", href: "#programs", hasDropdown: true },
-    { name: "News", href: "#news" },
+    { name: "Programs", href: "#programs" },
+    { name: "Schools", href: "#schools", hasDropdown: true },
     { name: "Contact", href: "#contact" },
   ]
 
   const programsSubNav = [
-    { name: "Early Childhood Education", href: "/programs/early-childhood" },
-    { name: "Primary & Secondary Education", href: "/programs/primary-secondary" },
-    { name: "Higher Education", href: "/programs/higher-education" },
+    { name: "Paud", href: "/schools/paud" },
+    { name: "Taman Kanak-Kanak", href: "/schools/sekolah-dasar" },
+    { name: "Sekolah Dasar", href: "/schools/taman-kanak-kanak" },
   ]
 
   return (

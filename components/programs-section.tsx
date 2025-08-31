@@ -1,108 +1,119 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { BookOpen, Laptop, Palette, Music, Beaker, Globe } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Users, Star, ExternalLink } from "lucide-react"
 
 export function ProgramsSection() {
   const programs = [
     {
-      icon: BookOpen,
-      title: "Early Childhood Development",
-      description: "Comprehensive programs for ages 3-5 focusing on foundational skills and social development.",
-      features: ["Play-based learning", "Language development", "Social skills", "School readiness"],
-      color: "bg-blue-500",
+      name: "Pesantren Kilat Ramadhan",
+      participants: 200,
+      rating: 5.0,
+      tags: ["Ibadah", "Akhlak", "Kebersamaan"],
+      image: "/program-pesantren-kilat.png",
+      description:
+        "Kegiatan intensif selama bulan Ramadhan untuk memperkuat iman, ibadah, dan pembentukan akhlak mulia.",
     },
     {
-      icon: Laptop,
-      title: "Digital Literacy Initiative",
-      description: "Preparing students for the digital age with coding, robotics, and technology integration.",
-      features: ["Coding bootcamps", "Robotics clubs", "Digital citizenship", "Tech mentorship"],
-      color: "bg-purple-500",
+      name: "Ekstrakurikuler Memanah",
+      participants: 150,
+      rating: 4.9,
+      tags: ["Olahraga Sunnah", "Fisik", "Fokus"],
+      image: "/program-memanah.png",
+      description:
+        "Melatih keterampilan memanah sebagai olahraga sunnah yang menumbuhkan konsentrasi, kekuatan, dan disiplin.",
     },
     {
-      icon: Palette,
-      title: "Creative Arts Program",
-      description: "Fostering creativity through visual arts, performing arts, and multimedia expression.",
-      features: ["Art studios", "Theater productions", "Digital media", "Art exhibitions"],
-      color: "bg-pink-500",
+      name: "Tahfidz Al-Qur’an",
+      participants: 180,
+      rating: 5.0,
+      tags: ["Qur’an", "Spiritual", "Kedisiplinan"],
+      image: "/program-tahfidz.png",
+      description:
+        "Program unggulan menghafal Al-Qur’an dengan metode yang menyenangkan dan pendampingan guru berpengalaman.",
     },
     {
-      icon: Music,
-      title: "Music & Performing Arts",
-      description: "Comprehensive music education from beginner to advanced levels across all genres.",
-      features: ["Orchestra", "Band programs", "Voice training", "Music theory"],
-      color: "bg-orange-500",
-    },
-    {
-      icon: Beaker,
-      title: "STEM Excellence",
-      description: "Advanced science, technology, engineering, and mathematics programs with hands-on learning.",
-      features: ["Lab research", "Engineering projects", "Science fairs", "Math competitions"],
-      color: "bg-green-500",
-    },
-    {
-      icon: Globe,
-      title: "Global Citizenship",
-      description: "Developing cultural awareness and global perspectives through language and cultural exchange.",
-      features: ["Language immersion", "Cultural exchange", "Model UN", "Global projects"],
-      color: "bg-teal-500",
+      name: "Robotik & Sains",
+      participants: 120,
+      rating: 4.8,
+      tags: ["Teknologi", "Inovasi", "Kreativitas"],
+      image: "/program-robotik.png",
+      description:
+        "Mengembangkan keterampilan abad 21 dengan pembelajaran robotik, eksperimen sains, dan pemecahan masalah kreatif.",
     },
   ]
 
   return (
-    <section id="programs" className="py-20 bg-muted/30">
+    <section id="programs" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Specialized Programs</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            Program Unggulan Sekolah
+          </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Our diverse range of specialized programs ensures every student can explore their passions and develop
-            skills that will serve them throughout their lives.
+            Kami menghadirkan berbagai program untuk mendukung tumbuh kembang anak secara holistik —
+            mencakup aspek spiritual, akademik, dan keterampilan hidup.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Program Cards */}
+        <div className="grid md:grid-cols-2 gap-8">
           {programs.map((program, index) => (
             <Card
               key={index}
-              className="bg-card border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="bg-card border-border overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={program.image || "/placeholder.svg"}
+                  alt={program.name}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardHeader>
-                <div className={`w-12 h-12 ${program.color} rounded-lg flex items-center justify-center mb-4`}>
-                  <program.icon className="h-6 w-6 text-white" />
+                <div className="flex justify-between items-start mb-2">
+                  <CardTitle className="text-xl text-foreground">{program.name}</CardTitle>
+                  <div className="flex items-center space-x-1">
+                    <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                    <span className="text-sm font-medium text-foreground">{program.rating}</span>
+                  </div>
                 </div>
-                <CardTitle className="text-xl text-foreground">{program.title}</CardTitle>
+                <div className="flex items-center text-muted-foreground text-sm space-x-4">
+                  <div className="flex items-center space-x-1">
+                    <Users className="h-4 w-4" />
+                    <span>{program.participants.toLocaleString()} peserta</span>
+                  </div>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{program.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {program.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                      {feature}
-                    </li>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {program.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {program.tags.map((tag, idx) => (
+                    <Badge key={idx} variant="secondary" className="bg-primary/10 text-primary">
+                      {tag}
+                    </Badge>
                   ))}
-                </ul>
+                </div>
                 <Button
                   variant="outline"
                   className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
                 >
-                  Learn More
+                  Selengkapnya
+                  <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="mt-16 bg-card rounded-2xl p-8 lg:p-12 border border-border">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Custom Program Development</h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              We work closely with communities to develop specialized programs that meet local needs and interests. Have
-              an idea for a new program? We'd love to hear from you.
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Propose a Program
-            </Button>
-          </div>
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            Lihat Semua Program
+          </Button>
         </div>
       </div>
     </section>
