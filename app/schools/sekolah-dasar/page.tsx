@@ -5,51 +5,44 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, Users, Trophy, Microscope, Globe, Palette, Music } from "lucide-react"
 
-export default function PrimarySecondaryPage() {
+export default function PrimarySchoolPage() {
   const levels = [
     {
-      title: "Primary Education",
-      description: "Foundation years building core academic and social skills",
-      grades: "Grades 1-6",
-      age: "6-12 years",
-      subjects: ["Mathematics", "Language Arts", "Science", "Social Studies", "Arts", "Physical Education"],
+      title: "Kelas Rendah",
+      description: "Fokus pada dasar membaca, menulis, berhitung, dan pembiasaan ibadah.",
+      grades: "Kelas 1-3",
+      age: "6-9 tahun",
+      subjects: ["Matematika", "Bahasa Indonesia", "IPA Dasar", "Pendidikan Agama", "Seni", "Olahraga"],
     },
     {
-      title: "Middle School",
-      description: "Transitional years developing critical thinking and independence",
-      grades: "Grades 7-9",
-      age: "12-15 years",
-      subjects: ["Advanced Mathematics", "Literature", "Biology", "History", "Technology", "Foreign Languages"],
-    },
-    {
-      title: "High School",
-      description: "Preparation for higher education and career readiness",
-      grades: "Grades 10-12",
-      age: "15-18 years",
-      subjects: ["Calculus", "Physics", "Chemistry", "Economics", "Advanced Arts", "Career Preparation"],
+      title: "Kelas Tinggi",
+      description: "Pengembangan ilmu pengetahuan, keterampilan, dan karakter Islami.",
+      grades: "Kelas 4-6",
+      age: "9-12 tahun",
+      subjects: ["Matematika Lanjutan", "Bahasa Indonesia", "IPS", "IPA", "Bahasa Arab", "Al-Qur’an & Hadis"],
     },
   ]
 
   const features = [
     {
       icon: BookOpen,
-      title: "Comprehensive Curriculum",
-      description: "Well-rounded education covering all essential subjects and skills",
+      title: "Kurikulum Terpadu",
+      description: "Menggabungkan kurikulum nasional dengan nilai-nilai Islam.",
     },
     {
       icon: Users,
-      title: "Small Class Sizes",
-      description: "Personalized attention with optimal teacher-to-student ratios",
+      title: "Guru Profesional",
+      description: "Tenaga pendidik berpengalaman dan berakhlak Islami.",
     },
     {
       icon: Trophy,
-      title: "Excellence Programs",
-      description: "Advanced programs for gifted students and specialized interests",
+      title: "Program Tahfidz",
+      description: "Pembiasaan membaca dan menghafal Al-Qur’an sejak dini.",
     },
     {
       icon: Microscope,
-      title: "STEM Focus",
-      description: "Strong emphasis on Science, Technology, Engineering, and Mathematics",
+      title: "Ilmu Pengetahuan",
+      description: "Pengenalan sains dan teknologi dengan pendekatan Islami.",
     },
   ]
 
@@ -66,17 +59,18 @@ export default function PrimarySecondaryPage() {
                 <BookOpen className="h-12 w-12 text-primary" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Primary & Secondary Education</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Sekolah Dasar Islam
+            </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Comprehensive education programs that build strong academic foundations, develop critical thinking skills,
-              and prepare students for future success.
+              Pendidikan dasar Islam yang membangun pondasi iman, ilmu, dan akhlak untuk masa depan anak.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Apply Now
+                Daftar Sekarang
               </Button>
               <Button size="lg" variant="outline">
-                School Tour
+                Kunjungi Sekolah
               </Button>
             </div>
           </div>
@@ -87,15 +81,16 @@ export default function PrimarySecondaryPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Education Levels</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Jenjang Pendidikan</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Progressive learning stages designed to support students' academic and personal growth.
+              Tahapan pembelajaran yang disusun sesuai dengan perkembangan usia dan kebutuhan anak.
             </p>
           </div>
 
-          <div className="space-y-8">
+          {/* Ubah jadi grid 2 kolom */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {levels.map((level, index) => (
-              <Card key={index} className="border-border">
+              <Card key={index} className="border-border h-full">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div>
@@ -110,7 +105,7 @@ export default function PrimarySecondaryPage() {
                 </CardHeader>
                 <CardContent>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Core Subjects:</h4>
+                    <h4 className="font-semibold text-foreground mb-3">Mata Pelajaran:</h4>
                     <div className="flex flex-wrap gap-2">
                       {level.subjects.map((subject, idx) => (
                         <Badge key={idx} variant="secondary" className="text-xs">
@@ -130,9 +125,9 @@ export default function PrimarySecondaryPage() {
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Our Schools</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Mengapa Memilih SD Islam Kami</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Exceptional educational features that set our primary and secondary programs apart.
+              Lingkungan belajar Islami yang mendukung perkembangan akademik dan karakter anak.
             </p>
           </div>
 
@@ -158,18 +153,18 @@ export default function PrimarySecondaryPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Beyond the Classroom</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Kegiatan Ekstrakurikuler</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Rich extracurricular programs that develop well-rounded students.
+              Program ekstrakurikuler yang memperkaya pengalaman belajar anak di luar kelas.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Trophy, title: "Sports Teams", desc: "Competitive athletics and team sports" },
-              { icon: Palette, title: "Arts Programs", desc: "Visual arts, drama, and creative expression" },
-              { icon: Music, title: "Music & Band", desc: "Orchestra, choir, and musical performances" },
-              { icon: Globe, title: "Clubs & Societies", desc: "Academic clubs and special interest groups" },
+              { icon: Trophy, title: "Olahraga", desc: "Futsal, renang, bela diri, dan lainnya" },
+              { icon: Palette, title: "Seni & Kreativitas", desc: "Lukis, tari, drama, dan kerajinan tangan" },
+              { icon: Music, title: "Musik & Nasyid", desc: "Paduan suara, marawis, dan alat musik" },
+              { icon: Globe, title: "Klub & Komunitas", desc: "Pramuka, sains, dan bahasa" },
             ].map((activity, index) => (
               <div key={index} className="text-center">
                 <div className="bg-primary/10 p-4 rounded-full w-fit mx-auto mb-4">

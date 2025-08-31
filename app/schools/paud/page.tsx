@@ -8,25 +8,40 @@ import { Baby, Users, BookOpen, Heart, Star, Clock } from "lucide-react"
 export default function EarlyChildhoodPage() {
   const programs = [
     {
-      title: "Pre-Kindergarten Program",
-      description: "Comprehensive early learning for ages 3-5",
-      age: "3-5 years",
-      duration: "Full Day",
-      features: ["Play-based learning", "Social development", "Basic literacy", "Creative arts"],
+      title: "Program PAUD",
+      description: "Pendidikan Anak Usia Dini untuk usia 3–6 tahun",
+      age: "3–6 tahun",
+      duration: "Setengah / Sehari Penuh",
+      features: [
+        "Belajar sambil bermain",
+        "Pengembangan karakter Islami",
+        "Dasar membaca & berhitung",
+        "Kreativitas & seni",
+      ],
     },
     {
-      title: "Nursery Care",
-      description: "Nurturing environment for toddlers",
-      age: "18 months - 3 years",
-      duration: "Half/Full Day",
-      features: ["Sensory play", "Language development", "Motor skills", "Emotional support"],
+      title: "Kelompok Bermain",
+      description: "Kegiatan bermain dan belajar untuk balita",
+      age: "2–3 tahun",
+      duration: "Setengah Hari",
+      features: [
+        "Stimulasi sensorik",
+        "Perkembangan bahasa",
+        "Latihan motorik halus & kasar",
+        "Kemandirian dasar",
+      ],
     },
     {
-      title: "Parent-Child Programs",
-      description: "Interactive sessions for families",
-      age: "0-3 years",
-      duration: "2 hours",
-      features: ["Bonding activities", "Parenting support", "Early stimulation", "Community building"],
+      title: "Program Parenting",
+      description: "Pendampingan orang tua & anak usia dini",
+      age: "0–2 tahun",
+      duration: "2 Jam / Sesi",
+      features: [
+        "Aktivitas bonding orang tua & anak",
+        "Tips pengasuhan Islami",
+        "Stimulasi dini",
+        "Komunitas orang tua",
+      ],
     },
   ]
 
@@ -43,17 +58,16 @@ export default function EarlyChildhoodPage() {
                 <Baby className="h-12 w-12 text-primary" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Early Childhood Education</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Pendidikan Anak Usia Dini</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Building strong foundations for lifelong learning through nurturing, play-based education that supports
-              every child's unique development journey.
+              Membentuk fondasi kuat sejak dini melalui pendidikan yang penuh kasih, bermain, dan nilai Islami agar anak tumbuh ceria, mandiri, dan berakhlak mulia.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Enroll Your Child
+                Daftar Sekarang
               </Button>
               <Button size="lg" variant="outline">
-                Schedule a Visit
+                Jadwalkan Kunjungan
               </Button>
             </div>
           </div>
@@ -64,9 +78,9 @@ export default function EarlyChildhoodPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Early Childhood Programs</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Program PAUD Kami</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Carefully designed programs that cater to different developmental stages and family needs.
+              Program pembelajaran yang dirancang sesuai tahap perkembangan anak dengan pendekatan Islami dan menyenangkan.
             </p>
           </div>
 
@@ -86,7 +100,7 @@ export default function EarlyChildhoodPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-sm text-foreground">Key Features:</h4>
+                    <h4 className="font-semibold text-sm text-foreground">Fokus Kegiatan:</h4>
                     <ul className="space-y-1">
                       {program.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm text-muted-foreground">
@@ -97,7 +111,7 @@ export default function EarlyChildhoodPage() {
                     </ul>
                   </div>
                   <Button className="w-full mt-6 bg-transparent" variant="outline">
-                    Learn More
+                    Lihat Detail
                   </Button>
                 </CardContent>
               </Card>
@@ -111,16 +125,16 @@ export default function EarlyChildhoodPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Educational Philosophy</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Filosofi Pendidikan Kami</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-primary/20 p-2 rounded-lg flex-shrink-0">
                     <Heart className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">Nurturing Environment</h3>
+                    <h3 className="font-semibold text-foreground mb-2">Lingkungan Penuh Kasih</h3>
                     <p className="text-muted-foreground">
-                      We create warm, safe spaces where children feel loved and supported to explore and learn.
+                      Kami menciptakan suasana yang aman dan penuh kasih sayang sehingga anak merasa dicintai dan berani bereksplorasi.
                     </p>
                   </div>
                 </div>
@@ -129,9 +143,9 @@ export default function EarlyChildhoodPage() {
                     <BookOpen className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">Play-Based Learning</h3>
+                    <h3 className="font-semibold text-foreground mb-2">Belajar Melalui Bermain</h3>
                     <p className="text-muted-foreground">
-                      Learning through play develops creativity, problem-solving skills, and social competence.
+                      Pembelajaran berbasis bermain yang mengembangkan kreativitas, rasa ingin tahu, dan kecerdasan sosial anak.
                     </p>
                   </div>
                 </div>
@@ -140,9 +154,9 @@ export default function EarlyChildhoodPage() {
                     <Users className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">Individual Development</h3>
+                    <h3 className="font-semibold text-foreground mb-2">Perkembangan Individu</h3>
                     <p className="text-muted-foreground">
-                      We recognize and celebrate each child's unique strengths, interests, and learning style.
+                      Setiap anak unik, kami mendampingi sesuai minat, potensi, dan karakter agar tumbuh optimal dan percaya diri.
                     </p>
                   </div>
                 </div>
@@ -151,7 +165,7 @@ export default function EarlyChildhoodPage() {
             <div className="relative">
               <img
                 src="/happy-children-playing-and-learning-in-colorful-ea.png"
-                alt="Children learning through play"
+                alt="Anak-anak belajar sambil bermain"
                 className="rounded-lg shadow-lg"
               />
             </div>

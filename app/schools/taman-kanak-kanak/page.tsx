@@ -3,66 +3,53 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Users, Award, Briefcase, Globe, Laptop, FlaskConical } from "lucide-react"
+import { BookOpen, Users, Heart, Moon, Star, Music, Palette } from "lucide-react"
 
-export default function HigherEducationPage() {
+export default function KinderGartenPage() {
   const programs = [
     {
-      title: "Bachelor's Degree Programs",
-      description: "Comprehensive undergraduate education across multiple disciplines",
-      duration: "3-4 years",
-      type: "Undergraduate",
-      fields: [
-        "Business Administration",
-        "Computer Science",
-        "Education",
-        "Engineering",
-        "Liberal Arts",
-        "Health Sciences",
-      ],
+      title: "Pembelajaran Islami",
+      description: "Pengenalan doa-doa harian, surat pendek, dan akhlak mulia sejak usia dini",
+      duration: "Setiap Hari",
+      type: "Spiritual",
+      fields: ["Doa Harian", "Surat Pendek", "Hadits Pilihan", "Adab Islami"],
     },
     {
-      title: "Master's Degree Programs",
-      description: "Advanced graduate studies for professional development",
-      duration: "1-2 years",
-      type: "Graduate",
-      fields: ["MBA", "Master of Education", "Master of Science", "Master of Arts", "Public Administration"],
+      title: "Pengembangan Karakter",
+      description: "Membentuk anak menjadi pribadi yang percaya diri, mandiri, dan berakhlak baik",
+      duration: "Sepanjang Tahun",
+      type: "Character Building",
+      fields: ["Kejujuran", "Tanggung Jawab", "Tolong-Menolong", "Disiplin"],
     },
     {
-      title: "Professional Certificates",
-      description: "Specialized training for career advancement",
-      duration: "6 months - 1 year",
-      type: "Certificate",
-      fields: [
-        "Digital Marketing",
-        "Project Management",
-        "Data Analytics",
-        "Teaching Certification",
-        "Healthcare Management",
-      ],
+      title: "Kreativitas & Bermain",
+      description: "Belajar melalui permainan edukatif, seni, dan kegiatan kreatif",
+      duration: "Setiap Minggu",
+      type: "Creative",
+      fields: ["Menggambar", "Bernyanyi Islami", "Kerajinan Tangan", "Permainan Edukatif"],
     },
   ]
 
   const features = [
     {
+      icon: BookOpen,
+      title: "Kurikulum Islami",
+      description: "Mengintegrasikan ilmu pengetahuan dengan nilai iman dan takwa",
+    },
+    {
       icon: Users,
-      title: "Expert Faculty",
-      description: "Learn from industry professionals and academic experts",
+      title: "Guru Profesional",
+      description: "Pendidik yang sabar, hangat, dan berkompeten dalam mendampingi anak",
     },
     {
-      icon: Laptop,
-      title: "Modern Facilities",
-      description: "State-of-the-art labs, libraries, and learning spaces",
+      icon: Heart,
+      title: "Lingkungan Nyaman",
+      description: "Suasana belajar yang aman, islami, dan menyenangkan",
     },
     {
-      icon: Briefcase,
-      title: "Career Services",
-      description: "Job placement assistance and career counseling",
-    },
-    {
-      icon: Globe,
-      title: "Global Partnerships",
-      description: "International exchange and collaboration opportunities",
+      icon: Moon,
+      title: "Pembiasaan Ibadah",
+      description: "Shalat berjamaah, doa harian, dan adab islami dalam kehidupan sehari-hari",
     },
   ]
 
@@ -76,20 +63,22 @@ export default function HigherEducationPage() {
           <div className="text-center">
             <div className="flex justify-center mb-6">
               <div className="bg-primary/20 p-4 rounded-full">
-                <GraduationCap className="h-12 w-12 text-primary" />
+                <Star className="h-12 w-12 text-primary" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Higher Education</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Taman Kanak-Kanak Islam
+            </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Advanced educational opportunities that prepare students for leadership roles and professional excellence
-              in their chosen fields.
+              Membimbing anak dengan kasih sayang dan nilai islami,
+              membentuk generasi berakhlak mulia, cerdas, dan penuh keceriaan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Apply Today
+                Daftar Sekarang
               </Button>
               <Button size="lg" variant="outline">
-                Request Information
+                Lihat Program
               </Button>
             </div>
           </div>
@@ -100,15 +89,18 @@ export default function HigherEducationPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Academic Programs</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Program TK Islam
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Diverse educational pathways designed to meet your academic and career goals.
+              Kegiatan pembelajaran terpadu yang menanamkan nilai agama, karakter, dan kreativitas anak.
             </p>
           </div>
 
-          <div className="space-y-8">
+          {/* Ubah ke grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {programs.map((program, index) => (
-              <Card key={index} className="border-border">
+              <Card key={index} className="border-border h-full">
                 <CardHeader>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                     <div className="flex-1">
@@ -116,17 +108,16 @@ export default function HigherEducationPage() {
                         <CardTitle className="text-2xl">{program.title}</CardTitle>
                         <Badge variant="secondary">{program.type}</Badge>
                       </div>
-                      <CardDescription className="text-base mb-3">{program.description}</CardDescription>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Award className="h-4 w-4 mr-1" />
-                        Duration: {program.duration}
-                      </div>
+                      <CardDescription className="text-base">{program.description}</CardDescription>
+                      {/* <div className="flex items-center text-sm text-muted-foreground">
+                        📅 Durasi: {program.duration}
+                      </div> */}
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Available Fields of Study:</h4>
+                    <h4 className="font-semibold text-foreground mb-3">Fokus Pembelajaran:</h4>
                     <div className="flex flex-wrap gap-2">
                       {program.fields.map((field, idx) => (
                         <Badge key={idx} variant="outline" className="text-xs">
@@ -135,9 +126,9 @@ export default function HigherEducationPage() {
                       ))}
                     </div>
                   </div>
-                  <Button className="mt-6 bg-transparent" variant="outline">
-                    Learn More About This Program
-                  </Button>
+                  {/* <Button className="mt-6" variant="outline">
+                    Pelajari Program Ini
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}
@@ -149,9 +140,11 @@ export default function HigherEducationPage() {
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Excellence in Higher Education</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Mengapa Memilih TK Islam Kami?
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive support and resources for your academic journey.
+              Lingkungan islami yang mendukung tumbuh kembang anak secara optimal.
             </p>
           </div>
 
@@ -173,56 +166,29 @@ export default function HigherEducationPage() {
         </div>
       </section>
 
-      {/* Research & Innovation */}
+      {/* Activities Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Research & Innovation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Kegiatan Harian & Ekstrakurikuler
+              </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Our higher education institutions are centers of research excellence, contributing to knowledge
-                advancement and societal progress.
+                Aktivitas yang dirancang untuk mengasah kecerdasan, spiritualitas, dan kreativitas anak.
               </p>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/20 p-2 rounded-lg flex-shrink-0">
-                    <FlaskConical className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Research Centers</h3>
-                    <p className="text-muted-foreground">
-                      Specialized research facilities focusing on cutting-edge discoveries and innovations.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/20 p-2 rounded-lg flex-shrink-0">
-                    <Users className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Student Research</h3>
-                    <p className="text-muted-foreground">
-                      Opportunities for students to participate in meaningful research projects.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/20 p-2 rounded-lg flex-shrink-0">
-                    <Globe className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Global Impact</h3>
-                    <p className="text-muted-foreground">
-                      Research that addresses global challenges and contributes to sustainable development.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <ul className="space-y-4 text-muted-foreground">
+                <li>🌙 Shalat berjamaah & doa harian</li>
+                <li>📖 Hafalan surat-surat pendek</li>
+                <li>🎨 Seni dan kreativitas islami</li>
+                <li>🎵 Lagu-lagu islami anak</li>
+                <li>🌳 Outbound & permainan edukatif</li>
+              </ul>
             </div>
             <div className="relative">
               <img
-                src="/university-students-conducting-research-in-modern-.png"
-                alt="Students conducting research"
+                src="/placeholder-1k6fb.png"
+                alt="Kegiatan anak TK Islam"
                 className="rounded-lg shadow-lg"
               />
             </div>

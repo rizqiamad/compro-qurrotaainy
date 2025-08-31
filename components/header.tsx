@@ -18,8 +18,8 @@ export function Header() {
 
   const programsSubNav = [
     { name: "Paud", href: "/schools/paud" },
-    { name: "Taman Kanak-Kanak", href: "/schools/sekolah-dasar" },
-    { name: "Sekolah Dasar", href: "/schools/taman-kanak-kanak" },
+    { name: "Taman Kanak-Kanak", href: "/schools/taman-kanak-kanak" },
+    { name: "Sekolah Dasar", href: "/schools/sekolah-dasar" },
   ]
 
   return (
