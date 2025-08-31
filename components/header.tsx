@@ -10,10 +10,10 @@ export function Header() {
   const [isProgramsOpen, setIsProgramsOpen] = useState(false)
 
   const navigation = [
-    { name: "About", href: "#about" },
-    { name: "Programs", href: "#programs" },
-    { name: "Schools", href: "#schools", hasDropdown: true },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/#about" },
+    { name: "Programs", href: "/#programs" },
+    { name: "Schools", href: "/#schools", hasDropdown: true },
+    { name: "Contact", href: "/#contact" },
   ]
 
   const programsSubNav = [
@@ -47,10 +47,10 @@ export function Header() {
                     onMouseEnter={() => setIsProgramsOpen(true)}
                     onMouseLeave={() => setIsProgramsOpen(false)}
                   >
-                    <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium hover:cursor-pointer">
+                    <Link href={item.href} className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-200 font-medium hover:cursor-pointer">
                       <span>{item.name}</span>
                       <ChevronDown className="h-4 w-4" />
-                    </button>
+                    </Link>
                     {isProgramsOpen && (
                       <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
                         {programsSubNav.map((subItem) => (

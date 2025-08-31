@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Baby, School, Book } from "lucide-react"
+import Link from "next/link"
 
 export function SchoolsSection() {
   const levels = [
@@ -11,6 +12,7 @@ export function SchoolsSection() {
         "Fokus pada perkembangan motorik, sosial, emosional, dan kognitif anak usia dini melalui pendekatan bermain yang edukatif.",
       features: ["Belajar sambil bermain", "Pembiasaan ibadah", "Motorik halus & kasar", "Interaksi sosial"],
       color: "bg-pink-500",
+      href: "/schools/paud"
     },
     {
       icon: School,
@@ -19,6 +21,7 @@ export function SchoolsSection() {
         "Mengembangkan kemandirian, kreativitas, serta kesiapan akademik dasar anak untuk melanjutkan ke sekolah dasar.",
       features: ["Calistung (membaca, menulis, berhitung)", "Seni & kreativitas", "Kegiatan outdoor", "Pembiasaan disiplin"],
       color: "bg-yellow-500",
+      href: "/schools/sekolah-dasar"
     },
     {
       icon: Book,
@@ -27,11 +30,12 @@ export function SchoolsSection() {
         "Pembelajaran terstruktur yang menekankan penguasaan akademik dasar, pembentukan karakter, serta keterampilan abad 21.",
       features: ["Kurikulum nasional", "Tahfidz & pendidikan karakter", "STEM & literasi digital", "Ekstrakurikuler variatif"],
       color: "bg-blue-500",
+      href: "/schools/taman-kanak-kanak"
     },
   ]
 
   return (
-    <section id="levels" className="py-20 bg-muted/30">
+    <section id="schools" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-16">
@@ -65,12 +69,14 @@ export function SchoolsSection() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                >
-                  Pelajari Lebih Lanjut
-                </Button>
+                <Link href={level.href}>
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent cursor-pointer"
+                  >
+                    Pelajari Lebih Lanjut
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
